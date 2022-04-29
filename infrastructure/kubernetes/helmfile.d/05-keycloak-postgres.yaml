@@ -1,0 +1,20 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+environments:
+  default:
+  istio:
+  linkerd:
+  kuma:
+  traefik-mesh:
+
+releases:
+  - name: keycloak-postgresql
+    namespace: hc-keycloak
+    labels:
+      service: keycloak
+    chart: bitnami/postgresql
+    version: 11.1.23
+    values:
+      - ./values/keycloak-postgresql-values.yaml.gotmpl
